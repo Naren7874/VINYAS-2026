@@ -1,11 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa; /* Pure soft light background */
-  --foreground: #18181b; /* Dark charcoal text */
-  --primary: #4f46e5; /* Indigo-600 */
-  --secondary: #7c3aed; /* Violet-600 */
-  --accent: #0891b2; /* Cyan-600 */
+  --background: #FAF8F5; /* Warm off-white/ivory background */
+  --foreground: #2C2623; /* Dark earthy charcoal */
+  
+  /* Vinyas 2026 Official Brand Palette */
+  --brand-burgundy: #5D2547; /* Plum / Violet-red */
+  --brand-rust: #BA541D;     /* Rust Orange */
+  --brand-blue: #235467;     /* Slate Blue */
+  --brand-green: #23673B;    /* Forest Green */
+  --brand-teal: #184D4E;     /* Deep Pine/Teal */
+  --brand-taupe: #786C64;    /* Warm Earthy Grey */
+  
+  --primary: var(--brand-burgundy);
+  --secondary: var(--brand-rust);
+  --accent: var(--brand-blue);
 }
 
 @theme inline {
@@ -13,6 +22,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), sans-serif;
   --font-display: var(--font-outfit), sans-serif;
+  
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-rust: var(--brand-rust);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-green: var(--brand-green);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-taupe: var(--brand-taupe);
   
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -27,20 +43,20 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Light background grid pattern */
+/* Light background grid pattern with warm earthy lines */
 .bg-grid-pattern {
-  background-size: 60px 60px;
+  background-size: 80px 80px;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(120, 108, 100, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 108, 100, 0.04) 1px, transparent 1px);
 }
 
-/* Premium Light Glassmorphism panel */
+/* Custom glassmorphism using the warm palette */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(120, 108, 100, 0.12);
 }
 
 .glass-panel-hover {
@@ -48,18 +64,17 @@ body {
 }
 
 .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(79, 70, 229, 0.25);
-  box-shadow: 0 12px 40px -10px rgba(79, 70, 229, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--brand-rust);
+  box-shadow: 0 16px 40px -12px rgba(186, 84, 29, 0.12);
   transform: translateY(-2px);
 }
 
-/* Text glow for high-end feel */
+/* Text glow */
 .text-glow {
-  text-shadow: 0 0 30px rgba(79, 70, 229, 0.15);
+  text-shadow: 0 0 40px rgba(93, 37, 71, 0.08);
 }
 
-/* Hide scrollbar but keep functionality */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
