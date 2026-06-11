@@ -1,84 +1,162 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF8F5; /* Warm off-white/ivory background */
-  --foreground: #2C2623; /* Dark earthy charcoal */
-  
-  /* Vinyas 2026 Official Brand Palette */
-  --brand-burgundy: #5D2547; /* Plum / Violet-red */
-  --brand-rust: #BA541D;     /* Rust Orange */
-  --brand-blue: #235467;     /* Slate Blue */
-  --brand-green: #23673B;    /* Forest Green */
-  --brand-teal: #184D4E;     /* Deep Pine/Teal */
-  --brand-taupe: #786C64;    /* Warm Earthy Grey */
-  
-  --primary: var(--brand-burgundy);
-  --secondary: var(--brand-rust);
-  --accent: var(--brand-blue);
+    --background: #FAF8F5;
+    /* Warm off-white/ivory background */
+    --foreground: #2C2623;
+    /* Dark earthy charcoal */
+
+    /* Vinyas 2026 Official Brand Palette */
+    --brand-burgundy: #5D2547;
+    /* Plum / Violet-red */
+    --brand-rust: #BA541D;
+    /* Rust Orange */
+    --brand-blue: #235467;
+    /* Slate Blue */
+    --brand-green: #23673B;
+    /* Forest Green */
+    --brand-teal: #184D4E;
+    /* Deep Pine/Teal */
+    --brand-taupe: #786C64;
+    /* Warm Earthy Grey */
+
+    --primary: var(--brand-burgundy);
+    --secondary: var(--brand-rust);
+    --accent: var(--brand-blue);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-outfit), sans-serif;
-  
-  --color-brand-burgundy: var(--brand-burgundy);
-  --color-brand-rust: var(--brand-rust);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-green: var(--brand-green);
-  --color-brand-teal: var(--brand-teal);
-  --color-brand-taupe: var(--brand-taupe);
-  
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-inter), sans-serif;
+    --font-display: var(--font-outfit), sans-serif;
+
+    --color-brand-burgundy: var(--brand-burgundy);
+    --color-brand-rust: var(--brand-rust);
+    --color-brand-blue: var(--brand-blue);
+    --color-brand-green: var(--brand-green);
+    --color-brand-teal: var(--brand-teal);
+    --color-brand-taupe: var(--brand-taupe);
+
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Light background grid pattern with warm earthy lines */
 .bg-grid-pattern {
-  background-size: 80px 80px;
-  background-image: 
-    linear-gradient(to right, rgba(120, 108, 100, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(120, 108, 100, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    background-image:
+        linear-gradient(to right, rgba(120, 108, 100, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(120, 108, 100, 0.04) 1px, transparent 1px);
 }
 
 /* Custom glassmorphism using the warm palette */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(120, 108, 100, 0.12);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(120, 108, 100, 0.12);
 }
 
 .glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: var(--brand-rust);
-  box-shadow: 0 16px 40px -12px rgba(186, 84, 29, 0.12);
-  transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--brand-rust);
+    box-shadow: 0 16px 40px -12px rgba(186, 84, 29, 0.12);
+    transform: translateY(-2px);
 }
 
 /* Text glow */
 .text-glow {
-  text-shadow: 0 0 40px rgba(93, 37, 71, 0.08);
+    text-shadow: 0 0 40px rgba(93, 37, 71, 0.08);
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
+
 .no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 3D Flip Clock Animation Styles */
+.perspective {
+    perspective: 600px;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+@keyframes flip-top {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes flip-bottom {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.animate-flip-top {
+    animation: flip-top 0.25s ease-in forwards;
+}
+
+.animate-flip-bottom {
+    animation: flip-bottom 0.25s ease-out 0.25s forwards;
+    transform: rotateX(90deg);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

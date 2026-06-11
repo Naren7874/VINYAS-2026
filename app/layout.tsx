@@ -115,7 +115,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${inter.variable} h-full antialiased`}
+      className={`${outfit.variable} ${inter.variable} min-h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <script
@@ -123,6 +124,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        {/* Footer */}
+      <footer className="w-full py-6 text-center border-t border-brand-taupe/10 bg-white/40 backdrop-blur-sm z-10 text-xs text-brand-taupe">
+        <span className="font-bold text-brand-burgundy">VINYAS 2026</span> &bull; IIID Charotar Centre. All rights reserved.
+      </footer>
       </body>
     </html>
   );
