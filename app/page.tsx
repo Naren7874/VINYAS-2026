@@ -335,7 +335,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="w-full flex-1 min-h-screen bg-[#FAF8F5] bg-grid-pattern relative flex flex-col justify-between selection:bg-brand-rust/10 selection:text-brand-rust overflow-hidden text-[#2C2623]">
+    <div className="w-full flex-1 min-h-screen bg-[#FAF8F5] bg-grid-pattern relative flex flex-col justify-between selection:bg-brand-rust/10 selection:text-brand-rust text-[#2C2623]">
 
       {/* Decorative Premium Glow Orbs */}
       <div className="absolute top-[-10%] left-[-10%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-br from-brand-burgundy/10 to-transparent filter blur-[80px] sm:blur-[120px] pointer-events-none" />

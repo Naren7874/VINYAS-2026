@@ -43,12 +43,15 @@
     --color-accent: var(--accent);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 /* Light background grid pattern with warm earthy lines */
