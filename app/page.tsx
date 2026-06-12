@@ -13,7 +13,7 @@ const Icons = {
     </svg>
   ),
   MapPin: () => (
-    <svg className="w-5 h-5 text-brand-rust" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg>
@@ -92,6 +92,13 @@ const Icons = {
   Phone: () => (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  ),
+  Instagram: () => (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
   ),
 };
@@ -181,7 +188,7 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const targetDate = new Date("2026-12-18T11:00:00+05:30").getTime();
+    const targetDate = new Date("2026-12-16T10:00:00+05:30").getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -379,12 +386,7 @@ export default function Home() {
       <section className="w-full relative py-10 sm:py-20 flex flex-col items-center justify-center z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-8 sm:gap-12 animate-fade-in">
 
-          {/* Subheading Badge */}
-          <span className="px-4 py-1.5 rounded-full bg-brand-burgundy/5 border border-brand-burgundy/15 text-[10px] sm:text-xs font-bold text-brand-burgundy uppercase tracking-[0.2em] shadow-sm animate-pulse">
-            IIID Charotar Centre Presents
-          </span>
-
-          {/* Hero Titles */}
+           {/* Hero Titles */}
           <div className="flex flex-col gap-3 sm:gap-4 items-center">
             <h1 className="font-display font-black text-4xl min-[375px]:text-5xl min-[410px]:text-6xl sm:text-8xl md:text-9xl tracking-tight leading-none text-brand-burgundy text-glow">
               VINYAS 2026
@@ -400,12 +402,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-4 mt-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-rust">
               <div className="flex items-center gap-1.5">
                 <Icons.Calendar />
-                <span>Dec 18 - 20, 2026</span>
-              </div>
-              <span className="text-brand-taupe/40 hidden sm:inline">•</span>
-              <div className="flex items-center gap-1.5">
-                <Icons.MapPin />
-                <span>AC Dome, Anand, Gujarat</span>
+                <span>Dec 16 - 18, 2026</span>
               </div>
             </div>
           </div>
@@ -756,7 +753,7 @@ export default function Home() {
                       {stallType === "regular" && <div className="w-2.5 h-2.5 rounded-full bg-brand-rust" />}
                     </div>
                     <p className="text-xs text-brand-taupe mb-4 font-medium leading-relaxed">
-                      Size: 3m x 3m (9 sq. m.) area. Includes basic carpet, partitions, logo fascia, lights, power, and counter.
+                      Size: 6m x 3m (20' x 10') area. Includes basic carpet, partitions, logo fascia, lights, power, and counter.
                     </p>
                     <span className="font-display font-black text-lg sm:text-xl text-brand-burgundy">
                       ₹ 1,95,000 <span className="text-[10px] text-brand-taupe font-normal">+ GST</span>
@@ -776,7 +773,7 @@ export default function Home() {
                       {stallType === "corner" && <div className="w-2.5 h-2.5 rounded-full bg-brand-rust" />}
                     </div>
                     <p className="text-xs text-brand-taupe mb-4 font-medium leading-relaxed">
-                      Size: 3m x 3m (9 sq. m.) area. Double-side open location with maximum footfall visibility across aisles.
+                      Size: 6m x 3m (20' x 10') area. Double-side open location with maximum footfall visibility across aisles.
                     </p>
                     <span className="font-display font-black text-lg sm:text-xl text-brand-burgundy">
                       ₹ 2,25,000 <span className="text-[10px] text-brand-taupe font-normal">+ GST</span>
@@ -853,22 +850,21 @@ export default function Home() {
             {/* Price Poster Layout Map Pane */}
             <div className="lg:col-span-5 flex flex-col items-center gap-4 w-full">
               <div className="relative p-2.5 bg-white rounded-3xl shadow-xl border border-brand-taupe/15 w-full flex flex-col gap-3 group">
-                <div className="relative overflow-hidden rounded-2xl bg-[#FAF8F5] flex items-center justify-center h-[260px] sm:h-[300px]">
+                <div className="relative overflow-hidden rounded-2xl bg-white border border-brand-taupe/10 flex items-center justify-center h-[480px] sm:h-[580px]">
                   <img
-                    src="/drive-download-20260611T190333Z-3-001/P 5_Price.png"
-                    alt="Official Exhibition Stall layout pricing sheet"
-                    className="w-auto h-full max-h-full object-contain"
+                    src="/Layout.jpg"
+                    alt="Official Exhibition Stall Layout Map"
+                    className="w-auto h-full max-h-full object-contain p-2 transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-200" />
                 </div>
 
                 <div className="px-2 flex items-center justify-between">
                   <div className="text-left">
-                    <h4 className="font-bold text-xs uppercase tracking-wider text-brand-burgundy">Pricing Reference</h4>
-                    <p className="text-[10px] text-brand-taupe font-medium">Detailed stall dimensions &amp; inclusions.</p>
+                    <h4 className="font-bold text-xs uppercase tracking-wider text-brand-burgundy">Stall Layout Map</h4>
+                    <p className="text-[10px] text-brand-taupe font-medium">Floor plan &amp; stall numbers.</p>
                   </div>
                   <a
-                    href="/drive-download-20260611T190333Z-3-001/P 5_Price.png"
+                    href="/Layout.jpg"
                     target="_blank"
                     className="px-3.5 py-1.5 rounded-lg border border-brand-taupe/15 hover:border-brand-burgundy hover:bg-brand-burgundy/5 text-brand-burgundy font-bold text-[9px] uppercase tracking-wider transition-all"
                   >
@@ -1061,7 +1057,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold">Email address</span>
-                      <a href="mailto:info@vinyas2026iiid.com" className="text-xs sm:text-sm text-white font-bold hover:underline">info@vinyas2026iiid.com</a>
+                      <a href="mailto:vinyas2026@gmail.com" className="text-xs sm:text-sm text-white font-bold hover:underline">vinyas2026@gmail.com</a>
                     </div>
                   </div>
 
@@ -1071,7 +1067,17 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold">Coordinator Contact</span>
-                      <a href="tel:+919879512345" className="text-xs sm:text-sm text-white font-bold hover:underline">+91 98795 12345</a>
+                      <a href="tel:+919825032891" className="text-xs sm:text-sm text-white font-bold hover:underline">+91 98250 32891</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                      <Icons.Instagram />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold">Instagram</span>
+                      <a href="https://instagram.com/vinyas2026_iiid" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-white font-bold hover:underline">vinyas2026_iiid</a>
                     </div>
                   </div>
 
@@ -1081,7 +1087,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold">Exhibition Venue</span>
-                      <span className="text-xs sm:text-sm text-white font-medium">IIID AC Dome, Anand, Gujarat</span>
+                      <span className="text-xs sm:text-sm text-white font-medium">IIID, Anand, Gujarat</span>
                     </div>
                   </div>
                 </div>
@@ -1091,7 +1097,7 @@ export default function Home() {
               <div className="text-left border-t border-white/10 pt-6 relative z-10">
                 <span className="text-[9px] uppercase tracking-widest text-white/40 font-bold block mb-2">IIID Committee Core</span>
                 <span className="text-xs text-white/85 font-medium leading-relaxed block">
-                  Kamal Patel • Maulik Pavagadhi
+                  Arc. Kamal Patel • Arc. Maulik Pavagadhi
                 </span>
               </div>
 
